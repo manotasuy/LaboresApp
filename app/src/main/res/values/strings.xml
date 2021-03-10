@@ -1,0 +1,79 @@
+<resources>
+    <string name="app_name">Labores</string>
+    <string name="txtTitulo">Labores</string>
+    <string name="txtVersion">v1.0 by Los b_ITless</string>
+    <string name="txtBio">Bio</string>
+    <string name="txtHome">Home</string>
+    <string name="btnHome">Ingresar</string>
+
+    <string name="fab_contentDescription">Ni idea</string>
+    <string name="btn_add">Agregar</string>
+    <string name="action_text">Log action</string>
+
+    <string name="card_view_text_nombre">Nombre</string>
+    <string name="card_view_title_edad">Edad: </string>
+    <string name="card_view_title_direccion">Dirección: </string>
+    <string name="card_view_title_telefono">Teléfono: </string>
+    <string name="card_view_title_email">Email: </string>
+    <string name="card_view_text_ranking">4</string>
+    <string name="card_view_text_name">Name</string>
+    <string name="card_view_text_username">Username</string>
+    <string name="card_view_text_profile_description">Profile description</string>
+
+    <string name="login_usuario">CI (sin puntos ni guiones)</string>
+    <string name="login_clave">Contraseña</string>
+    <string name="login_btn_ingresar">Ingresar</string>
+    <string name="login_btn_registro">Registrarse</string>
+    <string name="login_btn_recuperar_clave">Olvidé mi contraseña</string>
+    <string name="login_leyenda_creador">© Los b_ITless 2021</string>
+    <string name="nombre_archivo_comentarios">Comentarios.txt</string>
+    <string name="mensaje_excepcion_generar_archivo">Hubo un problema al generar el archivo</string>
+
+    <!-- Menu -->
+    <string name="menu_about">Acerca de</string>
+    <string name="menu_contact">Contacto</string>
+    <string name="menu_account">Configurar Cuenta</string>
+    <string name="menu_settings">Settings</string>
+    <string name="menu_delete">Delete</string>
+    <string name="menu_edit">Edit</string>
+    <string name="menu_guardar">Guardar</string>
+    <string name="menu_guardar_imagen">Guardar imagen</string>
+    <string name="menu_saludar">Saludar</string>
+
+    <!-- Mensajes -->
+    <string name="message_fab1">Prueba SnackBar</string>
+    <string name="message_fab2">Al listado!</string>
+    <string name="message_addItemButton_listado">Agregar Oferta</string>
+    <string name="message_btn_like">Te gusta</string>
+    <string name="message_btn_ranking">estrellas de puntuacion</string>
+    <string name="message_guardar_imagen">Imagen guardada, guiño, guiño!</string>
+    <string name="message_btn_saludar">Bienvenido a Labores, enjoy!</string>
+    <string name="message_active_permission">El permiso ya fue otorgado, para desactivarlo modifica los ajustes de la aplicación</string>
+    <string name="message_file_created">El archivo se ha creado</string>
+
+    <!-- Estados de la actividad -->
+    <string name="onCreate">OnCreate</string>
+    <string name="onStart">OnStart</string>
+    <string name="onResume">OnResume</string>
+    <string name="onRestart">OnRestart</string>
+    <string name="onPause">OnPause</string>
+    <string name="onStop">OnStop</string>
+    <string name="onDestroy">OnDestroy</string>
+
+    <!-- Lista de parámetros -->
+    <string name="pnombre">nombre</string>
+    <string name="pedad">edad</string>
+    <string name="pdireccion">direccion</string>
+    <string name="ptelefono">telefono</string>
+    <string name="pprueba">prueba</string>
+
+    <!-- Leyendas -->
+    <string name="meses">meses</string>
+    <string name="bio">Bio</string>
+    <string name="registro">Registro</string>
+    <string name="home">Home</string>
+    <string name="recuperar_pass">Recuperar Contraseña</string>
+
+    <!-- Funciones -->
+    <string name="pic_transition">pic transition</string>
+</resources>

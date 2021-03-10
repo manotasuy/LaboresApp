@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    android:orientation="vertical"
+    tools:context=".activities.MainActivity">
+
+    <include
+        android:id="@+id/ab_app"
+        layout="@layout/actionbar">
+    </include>
+
+    <ImageView
+        android:id="@+id/btnLogo"
+        android:layout_width="@dimen/size300"
+        android:layout_height="@dimen/size300"
+        android:layout_marginTop="@dimen/size30"
+        android:scaleType="centerCrop"
+        android:layout_gravity="top|center"
+        android:elevation="8dp"
+        android:src="@drawable/labores"/>
+
+    <EditText
+        android:id="@+id/etUsuario"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/login_usuario"
+        android:layout_marginTop="@dimen/size20"
+        android:layout_marginLeft="@dimen/size50"
+        android:layout_marginRight="@dimen/size50"
+        android:textColorHint="@color/colorPrimaryDark"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="@dimen/login_textos">
+    </EditText>
+
+    <EditText
+        android:id="@+id/etClave"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/size50"
+        android:layout_marginTop="@dimen/size10"
+        android:layout_marginRight="@dimen/size50"
+        android:hint="@string/login_clave"
+        android:textColor="@color/colorPrimaryDark"
+        android:textColorHint="@color/colorPrimaryDark"
+        android:textSize="@dimen/login_textos">
+    </EditText>
+
+    <Button
+        android:id="@+id/btnLogin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top|center"
+        android:layout_marginTop="@dimen/size20"
+        android:layout_marginLeft="@dimen/size50"
+        android:layout_marginRight="@dimen/size50"
+        android:text="@string/login_btn_ingresar"
+        android:textSize="@dimen/size20"
+        android:clickable="true"
+        android:backgroundTint="@color/colorAzul"
+        android:textColor="@color/colorPrimary"
+        android:textAllCaps="false"
+        android:contentDescription="@string/fab_contentDescription"
+        android:elevation="@dimen/size4"
+        android:onClick="login"/>
+
+    <Button
+        android:id="@+id/btnRegistro"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top|center"
+        android:layout_marginTop="@dimen/size0"
+        android:layout_marginLeft="@dimen/size50"
+        android:layout_marginRight="@dimen/size50"
+        android:text="@string/login_btn_registro"
+        android:textSize="@dimen/size20"
+        android:clickable="true"
+        android:backgroundTint="@color/colorVerde"
+        android:textColor="@color/colorPrimary"
+        android:textAllCaps="false"
+        android:contentDescription="@string/fab_contentDescription"
+        android:elevation="@dimen/size4"
+        android:onClick="registro"/>
+
+    <Button
+        android:id="@+id/btnRecuperarClave"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top|center"
+        android:layout_marginTop="@dimen/size0"
+        android:layout_marginLeft="@dimen/size50"
+        android:layout_marginRight="@dimen/size50"
+        android:text="@string/login_btn_recuperar_clave"
+        android:backgroundTint="@color/colorPrimary"
+        android:textSize="@dimen/size15"
+        android:clickable="true"
+        android:textColor="@color/colorAzul"
+        android:textAllCaps="false"
+        android:onClick="recuperar_clave"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/size50"
+        android:layout_marginLeft="@dimen/size50"
+        android:layout_marginRight="@dimen/size50"
+        android:text="@string/login_leyenda_creador"
+        android:textAlignment="center"
+        android:textSize="@dimen/size15"
+        android:textColor="@color/colorPrimaryDark">
+    </TextView>
+
+</LinearLayout>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+
+    <!-- Solid is used for background color of view -->
+    <solid android:color="@android:color/white"/>
+
+    <!-- corner is used for rounded corner of view -->
+    <corners android:radius="50dp"/>
+
+</shape>

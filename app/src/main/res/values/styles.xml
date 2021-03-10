@@ -1,0 +1,22 @@
+<resources>
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorBlanco</item>
+        <item name="colorPrimaryDark">@color/colorNegro</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <!--<item name="actionMenuTextColor">Your Color Here</item>
+        <item name="textColorPrimary">Your Color Here</item>-->
+    </style>
+
+    <style name="RaisedButton" parent="Theme.AppCompat.Light">
+        <item name="android:colorButtonNormal">@color/colorAccent</item>
+        <item name="android:colorControlHighlight">@color/colorBlanco</item>
+        <item name="android:textColor">@color/colorNegro</item>
+    </style>
+
+    <style name="ToolbarTheme" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
+        <item name="android:fontFamily">@assets/fonts/Billabong</item>
+    </style>
+
+</resources>

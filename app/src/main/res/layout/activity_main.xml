@@ -17,7 +17,7 @@
         android:id="@+id/btnLogo"
         android:layout_width="@dimen/size300"
         android:layout_height="@dimen/size300"
-        android:layout_marginTop="@dimen/size30"
+        android:layout_marginTop="@dimen/size40"
         android:scaleType="centerCrop"
         android:layout_gravity="top|center"
         android:elevation="8dp"

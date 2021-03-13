@@ -33,12 +33,11 @@
     <string name="menu_about">Acerca de</string>
     <string name="menu_contact">Contacto</string>
     <string name="menu_account">Configurar Cuenta</string>
-    <string name="menu_settings">Settings</string>
-    <string name="menu_delete">Delete</string>
-    <string name="menu_edit">Edit</string>
-    <string name="menu_guardar">Guardar</string>
-    <string name="menu_guardar_imagen">Guardar imagen</string>
-    <string name="menu_saludar">Saludar</string>
+    <string name="menu_settings">Configuración</string>
+    <string name="menu_anuncios">Anuncios</string>
+    <string name="menu_postulaciones">Postulaciones</string>
+    <string name="menu_vinculos">Vínculos</string>
+    <string name="menu_mensajes">Mensajes</string>
 
     <!-- Mensajes -->
     <string name="message_fab1">Prueba SnackBar</string>
@@ -73,6 +72,10 @@
     <string name="registro">Registro</string>
     <string name="home">Home</string>
     <string name="recuperar_pass">Recuperar Contraseña</string>
+    <string name="anuncios_empleado">Anuncios Disponibles</string>
+    <string name="postulaciones_empleado">Mis Postulaciones</string>
+    <string name="vinculos_empleado">Mis Vínculos</string>
+    <string name="mensajes_empleado">Mis Mensajes</string>
 
     <!-- Funciones -->
     <string name="pic_transition">pic transition</string>

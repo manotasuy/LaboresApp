@@ -11,12 +11,12 @@ import android.view.MenuItem;
 
 import com.bit.labores.R;
 
-public class PasswordRecovery extends AppCompatActivity {
+public class MensajesEmpleado extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_password_recovery);
+        setContentView(R.layout.activity_mensajes_empleado);
         cargarComponentes();
     }
 

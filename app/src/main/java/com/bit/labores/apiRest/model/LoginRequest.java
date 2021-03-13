@@ -3,7 +3,7 @@ package com.bit.labores.apiRest.model;
 public class LoginRequest {
 
     private String user;
-    private String pass;
+    private String password;
 
     public String getUser() {
         return user;
@@ -14,10 +14,10 @@ public class LoginRequest {
     }
 
     public String getPass() {
-        return pass;
+        return password;
     }
 
     public void setPass(String pass) {
-        this.pass = pass;
+        this.password = pass;
     }
 }

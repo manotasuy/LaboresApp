@@ -23,7 +23,10 @@ public class LoginDeserializer implements JsonDeserializer<LoginResponse> {
         LoginResponse respuesta = gson.fromJson(json, LoginResponse.class);
         JsonObject jsonObject = json.getAsJsonObject().getAsJsonObject();
         Log.d("Login", jsonObject.toString());
-        respuesta.setUser_id(jsonObject.get(JsonKeys.USER_ID).getAsInt());
+        respuesta.setUser_id(jsonObject.get(JsonKeys.USER_ID).getAsString());
+        respuesta.setMessage(jsonObject.get(JsonKeys.MESSAGE).getAsString());
+        respuesta.setPassword(jsonObject.get(JsonKeys.PASS).getAsString());
+        respuesta.setTipo(jsonObject.get(JsonKeys.TIPO).getAsString());
         respuesta.setUser(jsonObject.get(JsonKeys.USER).getAsString());
         return respuesta;
     }

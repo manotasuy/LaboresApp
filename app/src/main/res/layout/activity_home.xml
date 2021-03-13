@@ -8,11 +8,16 @@
     android:background="@color/colorPrimary"
     tools:context=".activities.Home">
 
+    <include
+        android:id="@+id/ab_app"
+        layout="@layout/actionbar">
+    </include>
+
     <TextView
-        android:id="@+id/etNombre_contacto"
+        android:id="@+id/etHome"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/size200"
+        android:layout_marginTop="@dimen/size50"
         android:layout_marginLeft="@dimen/size10"
         android:layout_marginRight="@dimen/size10"
         android:text="@string/home"

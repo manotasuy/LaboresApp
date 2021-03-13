@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorPrimary"
-    tools:context=".activities.PasswordRecovery">
+    tools:context=".activities.PostulacionesEmpleado">
 
     <include
         android:id="@+id/ab_app"
@@ -14,13 +14,13 @@
     </include>
 
     <TextView
-        android:id="@+id/etPasswordRecovery"
+        android:id="@+id/etPostulaciones"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/size50"
         android:layout_marginLeft="@dimen/size10"
         android:layout_marginRight="@dimen/size10"
-        android:text="@string/recuperar_pass"
+        android:text="@string/postulaciones_empleado"
         android:textAlignment="center"
         android:textSize="@dimen/size50"
         android:layout_gravity="center_vertical|center"

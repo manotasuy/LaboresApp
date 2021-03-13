@@ -10,9 +10,9 @@ import retrofit2.http.POST;
 
 public interface IApiEndpoints {
 
+    @POST(ApiRestConstants.URL_LOGIN)
+    Call<LoginResponse> userLogin(@Body LoginRequest loginRequest);
+
     @GET(ApiRestConstants.URL_ANUNCIO)
     Call<AnuncioResponse> getAnuncios();
-
-    @POST(".")
-    Call<LoginResponse> userLogin(@Body LoginRequest loginRequest);
 }

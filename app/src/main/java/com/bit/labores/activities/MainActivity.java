@@ -5,6 +5,7 @@ import androidx.appcompat.widget.Toolbar;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -41,46 +42,53 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void login(View v) {
+
         // Si el logueo fue exitoso debe redirigir al Home
         // Debo autenticar a través de la API
-        if (autenticarDesdeApi()) {
-            Intent i = new Intent(this, Home.class);
-            startActivity(i);
+        String usuario = ((EditText) findViewById(R.id.etUsuario)).getText().toString();
+        String clave = ((EditText) findViewById(R.id.etClave)).getText().toString();
+        if (usuario.equals("") || clave.equals("")) {
+            Toast.makeText(MainActivity.this,"Debe ingresar su usuario y clave", Toast.LENGTH_LONG).show();
+        }
+        else {
+            autenticarDesdeApi(usuario, clave);
+            if (estaLogueado()) {
+                Intent i = new Intent(this, Home.class);
+                startActivity(i);
+            }
         }
     }
 
-    private boolean autenticarDesdeApi() {
+    private void autenticarDesdeApi(String usuario, String clave) {
 
-//        String usuario = ((EditText) findViewById(R.id.etUsuario)).getText().toString();
-//        String clave = ((EditText) findViewById(R.id.etClave)).getText().toString();
-//        LoginRequest loginRequest = new LoginRequest();
-//        loginRequest.setUser(usuario);
-//        loginRequest.setPass(clave);
-//
-//        ApiRestAdapter adaptador = new ApiRestAdapter();
-//        Gson gsonLoginInfo = adaptador.construyeGsonDeserializadorLogin();
-//        IApiEndpoints endpointsAPI = adaptador.establecerConexionApiLabores(gsonLoginInfo);
-//        Call<LoginResponse> loginResponseCall = endpointsAPI.userLogin(loginRequest);
-//        loginResponseCall.enqueue(new Callback<LoginResponse>() {
-//            @Override
-//            public void onResponse(Call<LoginResponse> call, Response<LoginResponse> response) {
-//
-//                if(response.isSuccessful()){
-//                    Toast.makeText(MainActivity.this,"Login Successful", Toast.LENGTH_LONG).show();
-//                    LoginResponse loginResponse = response.body();
-//                    guardarCuenta(usuario,clave);
-//                }
-//                else{
-//                    Toast.makeText(MainActivity.this,"Login Failed", Toast.LENGTH_LONG).show();
-//                }
-//            }
-//            @Override
-//            public void onFailure(Call<LoginResponse> call, Throwable t) {
-//                Toast.makeText(MainActivity.this, "Connection failed", Toast.LENGTH_LONG).show();
-//                Log.e("Connection failed", t.toString());
-//            }
-//        });
-        return true;
+        LoginRequest loginRequest = new LoginRequest();
+        loginRequest.setUser(usuario);
+        loginRequest.setPass(clave);
+
+        ApiRestAdapter adaptador = new ApiRestAdapter();
+        Gson gsonLoginInfo = adaptador.construyeGsonDeserializadorLogin();
+        IApiEndpoints endpointsAPI = adaptador.establecerConexionApiLabores(gsonLoginInfo);
+        Call<LoginResponse> loginResponseCall = endpointsAPI.userLogin(loginRequest);
+        loginResponseCall.enqueue(new Callback<LoginResponse>() {
+            @Override
+            public void onResponse(Call<LoginResponse> call, Response<LoginResponse> response) {
+
+                if(response.isSuccessful()){
+                    LoginResponse loginResponse = response.body();
+                    Toast.makeText(MainActivity.this,loginResponse.getMessage() +
+                            ", ID: " + loginResponse.getUser_id(), Toast.LENGTH_LONG).show();
+                    guardarCuenta(loginResponse);
+                }
+                else{
+                    Toast.makeText(MainActivity.this,"Login Failed", Toast.LENGTH_LONG).show();
+                }
+            }
+            @Override
+            public void onFailure(Call<LoginResponse> call, Throwable t) {
+                Toast.makeText(MainActivity.this, "Connection failed", Toast.LENGTH_LONG).show();
+                Log.e("Connection failed", t.toString());
+            }
+        });
     }
 
     public void registro(View v) {
@@ -98,16 +106,18 @@ public class MainActivity extends AppCompatActivity {
     private boolean estaLogueado() {
         // Debe consultar a las preferencias compartidas para ver si están las credenciales guardadas,
         // en caso afirmativo es porque el usuario se logueo, sino no
-        String usuario = (String) SharedPreferencesHandler.obtenerPreferencia(this, "usuario", "string");
-        String clave = (String) SharedPreferencesHandler.obtenerPreferencia(this, "clave", "string");
-        return usuario != "" && clave != "";
+        String id_usuario = (String) SharedPreferencesHandler.obtenerPreferencia(this, "id_usuario", "string");
+        Toast.makeText(MainActivity.this,"id_usuario by SP: " + id_usuario, Toast.LENGTH_LONG).show();
+        return id_usuario != "";
     }
 
-    private void guardarCuenta(String usuario, String clave) {
+    private void guardarCuenta(LoginResponse loginResponse) {
         try {
-            // Guardo el usuario y clave en las preferencias compartidas
-            SharedPreferencesHandler.guardarPreferencia(this,"usuario", usuario, "string");
-            SharedPreferencesHandler.guardarPreferencia(this,"clave", clave, "string");
+            // Guardo el id, usuario, clave y tipo en las preferencias compartidas
+            SharedPreferencesHandler.guardarPreferencia(this,"id_usuario", loginResponse.getUser_id(), "string");
+            SharedPreferencesHandler.guardarPreferencia(this,"usuario", loginResponse.getUser(), "string");
+            SharedPreferencesHandler.guardarPreferencia(this,"clave", loginResponse.getPassword(), "string");
+            SharedPreferencesHandler.guardarPreferencia(this,"tipo_usuario", loginResponse.getTipo(), "string");
         }
         catch (Exception e){
             e.printStackTrace();
